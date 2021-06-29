@@ -1,0 +1,41 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "30.0.3"
+    defaultConfig {
+        applicationId "wx.it.mall"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    /*导入网络请求库*/
+    implementation 'com.zhy:okhttputils:2.6.2'
+    /*导入图片加载库*/
+    //implementation 'com.github.bumptech.gilde:okhttp3-integration:1.5.0@aar'
+    implementation 'com.github.bumptech.glide:okhttp3-integration:4.5.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    /*导入图片轮播及下拉刷新库*/
+    implementation 'com.youth.banner:banner:1.4.10'
+    implementation 'com.cjj.materialrefeshlayout:library:1.3.0'
+    /*vLayout及gson库*/
+    implementation('com.alibaba.android:vlayout:1.2.8@aar') {transitive = true }
+    implementation 'com.google.code.gson:gson:2.8.2'
+}
