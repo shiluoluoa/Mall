@@ -1,18 +1,14 @@
 package wx.it.mall.fragment;
 
-
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
@@ -33,7 +29,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import wx.it.mall.R;
+import okhttp3.Call;
 import wx.it.mall.adapter.HomeActAdapter;
 import wx.it.mall.adapter.HomeHotProductAdapter;
 import wx.it.mall.adapter.HomeTopBannerAndParamAdapter;
@@ -41,14 +37,12 @@ import wx.it.mall.config.Constant;
 import wx.it.mall.listener.OnItemClickListener;
 import wx.it.mall.pojo.Param;
 import wx.it.mall.pojo.Product;
+import wx.it.mall.R;
 import wx.it.mall.pojo.ResponeCode;
 import wx.it.mall.pojo.SverResponse;
 import wx.it.mall.ui.DetailActivity;
 import wx.it.mall.utils.JSONUtils;
 import wx.it.mall.utils.Utils;
-
-import okhttp3.Call;
-
 
 public class HomeFragment extends Fragment {
     private RecyclerView mRecylerView;

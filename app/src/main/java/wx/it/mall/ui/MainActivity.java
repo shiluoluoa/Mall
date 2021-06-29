@@ -1,19 +1,21 @@
 package wx.it.mall.ui;
 
+import android.os.Bundle;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.os.Bundle;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 
 import wx.it.mall.R;
 import wx.it.mall.fragment.CartFragment;
 import wx.it.mall.fragment.CategoryFragment;
 import wx.it.mall.fragment.HomeFragment;
 import wx.it.mall.fragment.UserFragment;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,11 +33,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //initFragment();
-        //bindEvent();
+        initFragment();
+        bindEvent();
     }
 
-    //初始化Fragment
+    /**
+     * 初始化Fragment
+     */
     private void initFragment(){
 
         FragmentManager fm = getSupportFragmentManager();
@@ -51,7 +55,9 @@ public class MainActivity extends AppCompatActivity {
         ft.show(homeFragment).hide(categoryFragment).hide(cartFragment).hide(userFragment).commit();
     }
 
-    //监听change事件
+    /**
+     * 监听change事件
+     */
     private void bindEvent(){
         //查找控件
         mRadioGroup = (RadioGroup)findViewById(R.id.radio_group_button);
@@ -85,7 +91,10 @@ public class MainActivity extends AppCompatActivity {
         mRadioButtonHome.setChecked(true);
     }
 
-    //@param savedInstanceState
+    /**
+     * 防止重影
+     * @param savedInstanceState
+     */
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
