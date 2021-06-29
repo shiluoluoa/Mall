@@ -10,13 +10,14 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import wx.it.mall.R;
+import wx.it.mall.fragment.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
 
     private RadioGroup mRadioGroup;
 
     //定义tab对应的Fragment
-    //private HomeFragment homeFragment;
+    private HomeFragment homeFragment;
     //private CategoryFragment categoryFragment;
     //private Fragment cartFragment;
     //private Fragment userFragment;
@@ -31,28 +32,24 @@ public class MainActivity extends AppCompatActivity {
         //bindEvent();
     }
 
-    /**
-     * 初始化Fragment
-     */
-    /*private void initFragment(){
+    //初始化Fragment
+    private void initFragment(){
 
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         homeFragment = new HomeFragment();
         ft.add(R.id.container,homeFragment,"home");
-        categoryFragment = new CategoryFragment();
+        /*categoryFragment = new CategoryFragment();
         ft.add(R.id.container,categoryFragment,"category");
         cartFragment = new CartFragment();
         ft.add(R.id.container,cartFragment,"cart");
         userFragment = new UserFragment();
         ft.add(R.id.container,userFragment,"user");
-        ft.show(homeFragment).hide(categoryFragment).hide(cartFragment).hide(userFragment).commit();
-    }*/
+        ft.show(homeFragment).hide(categoryFragment).hide(cartFragment).hide(userFragment).commit();*/
+    }
 
-    /**
-     * 监听change事件
-     */
-    /*private void bindEvent(){
+    //监听change事件
+    private void bindEvent(){
         //查找控件
         mRadioGroup = (RadioGroup)findViewById(R.id.radio_group_button);
         mRadioButtonHome = (RadioButton)findViewById(R.id.radio_button_home);
@@ -63,10 +60,10 @@ public class MainActivity extends AppCompatActivity {
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                 switch(checkedId){
                     case R.id.radio_button_home:
-                        ft.show(homeFragment).hide(categoryFragment).hide(cartFragment).hide(userFragment).commit();
-
+                        //ft.show(homeFragment).hide(categoryFragment).hide(cartFragment).hide(userFragment).commit();
+                        ft.show(homeFragment);
                         break;
-                    case R.id.radio_button_category:
+                    /*case R.id.radio_button_category:
                         ft.show(categoryFragment).hide(homeFragment).hide(cartFragment).hide(userFragment).commit();
 
                         break;
@@ -77,18 +74,15 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.radio_button_user:
                         ft.show(userFragment).hide(categoryFragment).hide(cartFragment).hide(homeFragment).commit();
 
-                        break;
+                        break;*/
                 }
             }
         });
 
         mRadioButtonHome.setChecked(true);
-    }*/
+    }
 
-    /**
-     * 防止重影
-     * @param savedInstanceState
-     */
+    //@param savedInstanceState
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
