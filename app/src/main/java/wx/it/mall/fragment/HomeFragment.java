@@ -210,8 +210,7 @@ public class HomeFragment extends Fragment {
 
                     @Override
                     public void onResponse(String response, int id) {
-                        final Type type = new TypeToken<SverResponse<List<Product>>>() {
-                        }.getType();
+                        final Type type = new TypeToken<SverResponse<List<Product>>>() {}.getType();
                         SverResponse<List<Product>> result = JSONUtils.fromJson(response, type);
 //                        SverResponse<List<Product>> result = JSON.parseObject(response, new TypeReference<SverResponse<List<Product>>>() {
 //                        });
