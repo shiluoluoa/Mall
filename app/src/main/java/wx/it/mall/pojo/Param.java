@@ -9,7 +9,6 @@ public class Param {
     private int level;
     private String created;
     private String updated;
-
     private boolean pressed = false;
 
     public Param() {
