@@ -3,7 +3,7 @@ package wx.it.mall.config;
 public class Constant {
     public static class API{
         //基地址
-        public static final String BASE_URL="http://39.97.173.123:8080/";
+        public static final String BASE_URL="http://39.97.173.123:8080/mall";
         //产品类型参数地址
         public static final String CATEGORY_PARAM_URL=BASE_URL+"param/findallparams.do";
         //热销商品
