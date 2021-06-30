@@ -22,39 +22,44 @@ import wx.it.mall.pojo.Product;
 public class CategoryRightAdapter extends RecyclerView.Adapter<CategoryRightAdapter.ProductViewHolder>implements View.OnClickListener{
     private Context context;
     private List<Product> mData;
-    //private OnItemClickListener onItemClickListener;
+    private OnItemClickListener onItemClickListener;
+
     public CategoryRightAdapter(Context context, List<Product> mData) {
         this.context = context;
         this.mData = mData;
     }
 
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
 
-    @NonNull
     @Override
-    public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ProductViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.fragment_category_right_list_item,null,false);
         return new ProductViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
+    public void onBindViewHolder(ProductViewHolder holder, int position) {
         Product product = mData.get(position);
         holder.name.setText(product.getName());
         holder.price.setText(product.getPrice()+"");
         Glide.with(context).load(Constant.API.BASE_URL+product.getIconUrl()).into(holder.icon_url);
-        //
+        //记录位置
         holder.itemView.setTag(position);
         holder.itemView.setOnClickListener(this);
     }
 
     @Override
-    public int getItemCount() {
-        return mData.size();
+    public void onClick(View v) {
+        if(onItemClickListener!=null){
+            onItemClickListener.onItemClick(v,(int)v.getTag());
+        }
     }
 
     @Override
-    public void onClick(View view) {
-
+    public int getItemCount() {
+        return mData.size();
     }
 
     public static class ProductViewHolder extends RecyclerView.ViewHolder{
