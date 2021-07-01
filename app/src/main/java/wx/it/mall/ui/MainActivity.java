@@ -18,7 +18,6 @@ import wx.it.mall.fragment.UserFragment;
 
 
 public class MainActivity extends AppCompatActivity {
-
     private RadioGroup mRadioGroup;
 
     //定义tab对应的Fragment
@@ -111,4 +110,5 @@ public class MainActivity extends AppCompatActivity {
             ft.commit();
         }
     }
+
 }

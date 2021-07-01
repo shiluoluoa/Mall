@@ -3,7 +3,7 @@ package wx.it.mall.config;
 public class Constant {
     public static class API{
         //基地址
-        public static final String BASE_URL="http://39.97.173.123:8080/mall";
+        public static final String BASE_URL="http://192.168.43.182:8080/";
         //产品类型参数地址
         public static final String CATEGORY_PARAM_URL=BASE_URL+"param/findallparams.do";
         //热销商品
@@ -21,7 +21,7 @@ public class Constant {
         //删除购物车中商品
         public static final String CART_DEL_URL=BASE_URL+"cart/deletecarts.do";
         //登陆接口
-        public static final String USER_LOGIN_URL=BASE_URL+"user/do_login.do";
+        public static final String USER_LOGIN_URL=BASE_URL+"user/login.do";
         //注册接口
         public static final String USER_REGIST_URL=BASE_URL+"user/do_register.do";
         //获取用户信息

@@ -4,7 +4,7 @@ public class Param {
     private int id;
     private int parent_id;
     private String name;
-    private int status;
+    private boolean status;
     private int sort_order;
     private int level;
     private String created;
@@ -14,7 +14,7 @@ public class Param {
     public Param() {
     }
 
-    public Param(int id, int parent_id, String name, int status, int sort_order, int level, String created, String updated) {
+    public Param(int id, int parent_id, String name, boolean status, int sort_order, int level, String created, String updated) {
         this.id = id;
         this.parent_id = parent_id;
         this.name = name;
@@ -57,11 +57,11 @@ public class Param {
         this.name = name;
     }
 
-    public int isStatus() {
+    public boolean isStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 
