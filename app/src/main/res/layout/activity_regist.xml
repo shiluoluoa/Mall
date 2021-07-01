@@ -1,9 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.RegistActivity">
+    android:background="@color/colorBackground"
+    android:orientation="vertical"
+    tools:context=".ui.LoginActivity">
+    <!--头像部分开始-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@mipmap/back_login">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/head_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="60dp"
+            android:background="@mipmap/bg_head"
+            android:src="@mipmap/head_mann" />
+    </RelativeLayout>
+
+    <!--头像部分结束-->
+    <!--登陆账号和密码-->
+    <EditText
+        android:id="@+id/regist_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/login_input_background"
+        android:hint="账号/手机号"
+        android:inputType="text"
+        android:lines="1"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/regist_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_input_background"
+        android:hint="密码"
+        android:inputType="textPassword"
+        android:lines="1"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/regist_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_input_background"
+        android:hint="邮箱"
+        android:inputType="text"
+        android:lines="1"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/regist_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_input_background"
+        android:hint="手机号"
+        android:inputType="text"
+        android:lines="1"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/regist_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_input_background"
+        android:hint="年龄"
+        android:inputType="text"
+        android:lines="1"
+        android:padding="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="性别"
+            android:background="@drawable/login_input_background"
+            android:lines="1"
+            android:padding="10dp"/>
+        <RadioGroup
+            android:id="@+id/regist_sex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="男"/>
+            <RadioButton
+                android:id="@+id/f"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="女"/>
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/regist_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_input_background"
+        android:hint="密保问题"
+        android:inputType="text"
+        android:lines="1"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/regist_asw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_input_background"
+        android:hint="找回密码的答案"
+        android:inputType="text"
+        android:lines="1"
+        android:padding="10dp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <Button
+            android:id="@+id/bt_regist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_button_backgroud"
+            android:text="注   册"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+
+</LinearLayout>
